@@ -1,4 +1,4 @@
-import ast.{And, Expression, Is, IsNot, Var}
+import ast.{And, Expression, Is, Var}
 
 class WorkflowBuilder{
 
@@ -15,20 +15,4 @@ class WorkflowBuilder{
 
     }
   }
-
-  def interpreter(expression: Expression): Boolean =
-    expression match {
-      case Var(value) => value.equals(true)
-      case Is(f, g) => (f match
-        case Var(value) => value
-        case Is(f, g) => interpreter(f) == interpreter(g)
-        case IsNot(f, g) => interpreter(f) != interpreter(g))
-        .equals(g match
-          case Var(value) => value
-            case Is(f, g) => interpreter(f) == interpreter(g)
-            case IsNot(f, g) => interpreter(f) != interpreter(g)
-          )
-
-
-    }
 }

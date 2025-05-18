@@ -8,9 +8,6 @@ object Main {
     val lastLoginAt = Var("lastLoginAt")
     
     val workflow: WorkflowBuilder = new WorkflowBuilder();
-    
-    workflow.transition("A", "B").when(
-      role is role
-    )
+
   }
 }

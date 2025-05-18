@@ -1,7 +1,5 @@
 package ast
 
-import scala.annotation.targetName
-
 sealed trait Expression
 
 case class Var(value: Any) extends Expression
