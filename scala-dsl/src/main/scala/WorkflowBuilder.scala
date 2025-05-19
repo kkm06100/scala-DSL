@@ -1,5 +1,3 @@
-import ast.{And, Expression, Is, Var}
-
 class WorkflowBuilder{
 
   def transition(current: String, before: String): ConditionBuilder = {
@@ -10,9 +8,6 @@ class WorkflowBuilder{
   }
 
   class ConditionBuilder{
-
-    def when(expression: Expression): Unit = {
-
-    }
+    
   }
 }

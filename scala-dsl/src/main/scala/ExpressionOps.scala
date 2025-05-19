@@ -1,11 +1,14 @@
-import ast.{And, Expression, Is, Or, Var}
+implicit class ExpressionOps(val v: Any) {
 
-implicit class ExpressionOps(val v: Expression) {
+  def is(value: Any): Boolean = {
+    v.equals(value)
+  }
 
-  def is(value: Expression): Is = Is(v, Var(value))
-  
-  def and(value: Expression): And = And(v, Var(value))
-  
-  def or(value: Expression): Or = Or(v, Var(value))
-  
+  def and(value: Boolean): Boolean = {
+    v.equals(true) && value.equals(true)
+  }
+
+  def or(value: Boolean): Boolean = {
+    v.equals(true) || value.equals(true)
+  }
 }
